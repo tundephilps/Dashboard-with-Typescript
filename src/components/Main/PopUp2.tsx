@@ -1,20 +1,20 @@
 import {
-  FilterList,
-  Menu,
   MoreVert,
   SupervisedUserCircleSharp,
   VerifiedUser,
   Visibility,
 } from "@mui/icons-material";
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PopUp2 = () => {
+  //Conditional Rendering Menu List Onclick of an Icon
   const [showOptions, setShowOptions] = useState(false);
   const handleClick = () => {
     setShowOptions(!showOptions);
   };
 
-  const [user, setUser] = useState([]);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -34,7 +34,10 @@ const PopUp2 = () => {
             <li>
               <a
                 //  href={`/Userprofile/${user.id}`}
-                href="/Userprofile/:id"
+                onClick={() => {
+                  navigate("/Userprofile/:id");
+                }}
+                //href="/Userprofile/:id"
                 className="flex gap-2 items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 <Visibility />
@@ -43,7 +46,7 @@ const PopUp2 = () => {
             </li>
             <li>
               <a
-                href="#"
+                href=""
                 className="flex gap-2 items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 <VerifiedUser />
@@ -52,7 +55,7 @@ const PopUp2 = () => {
             </li>
             <li>
               <a
-                href="#"
+                href=""
                 className="flex gap-2 items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 <SupervisedUserCircleSharp />

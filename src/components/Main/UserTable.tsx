@@ -1,17 +1,12 @@
 //Replace fetch with axios
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PopUp from "./PopUp";
 import PopUp2 from "./PopUp2";
 import Pagination from "react-js-pagination";
 
-import axios, { AxiosResponse } from "axios";
-
-interface MyData {
-  name: string;
-  age: number;
-}
+import axios from "axios";
 
 interface User {
   orgName: string;
@@ -24,20 +19,32 @@ interface User {
 }
 
 export const UsersTable = (props: any) => {
+  //State for rendering List of Users from the API
   const [users, setUsers] = useState<User[]>([]);
+
+  //State that takes care of Pagination
   const [activePage, setActivePage] = useState<number>(1);
+
+  //State that Works on the Page Lazy loading while making API call
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
   const itemsPerPage = 10;
+  //Mavigation to another route
   const navigate = useNavigate();
 
   useEffect(() => {
+    //want to wait 5 seconds before the Usedata renders on the component
     setTimeout(() => {
       setIsLoading(false);
     }, 5000);
+    //Api call using Axios that brings in a response and returns as a promise
     axios
       .get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
       .then((response) => setUsers(response.data));
   }, []);
+
+  //a function that displays to show if the user is active, inactive or blacklisted based on the paramters and data
+  //avaliable on the API with the current Date and Active date
 
   const getButtonText = (date: string) => {
     const currentDate = new Date();
@@ -54,6 +61,7 @@ export const UsersTable = (props: any) => {
     }
   };
 
+  //React Pagination function to control pagination of the table
   const handlePageChange = (pageNumber: number) => {
     setActivePage(pageNumber);
   };
@@ -116,7 +124,7 @@ export const UsersTable = (props: any) => {
                 <td className="p-3 ">
                   <button
                     onClick={() => {
-                      navigate("/Userprofile/${user.id}");
+                      navigate("/Userprofile/:id");
                     }}
                     className={
                       getButtonText(user.lastActiveDate) === "Active"

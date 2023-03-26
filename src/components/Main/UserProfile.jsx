@@ -1,7 +1,6 @@
 //import { Link } from "react-router-dom";
 
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Star, StarOutline, KeyboardBackspace } from "@mui/icons-material";
 import axios from "axios";
 
@@ -11,6 +10,7 @@ const UserProfile = ({ match }) => {
   //const params = useParams;
 
   useEffect(() => {
+    //API call to Render Users to Route on a page based on each users Unique ID
     axios
       .get(
         `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/?id`
@@ -18,6 +18,9 @@ const UserProfile = ({ match }) => {
       .then((res) => {
         setUserData(res.data);
         console.log(res.data);
+
+        //Items of User details page from API stored into Local storage of the system.
+        localStorage.setItem("userData", JSON.stringify(res.data));
       })
       .catch((err) => {
         console.log(err);
@@ -110,39 +113,39 @@ const UserProfile = ({ match }) => {
 
                     <div className="ml-auto sm:flex hidden items-center justify-end"></div>
                   </div>
-                  <div className="flex items-center justify-center space-x-[2%] sm:mt-7 mt-4 w-full">
+                  <div className=" items-center justify-center space-x-[2%] sm:mt-7 mt-4 w-full lg:flex hidden">
                     <a
-                      href="#"
+                      href="/#"
                       className="px-[1%] border-b-4 border-cyan-500 text-cyan-500  pb-1.5 "
                     >
                       General Details
                     </a>
                     <a
-                      href="#"
+                      href="/#"
                       className="px-12 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5"
                     >
                       Documents
                     </a>
                     <a
-                      href="#"
+                      href="/#"
                       className="px-12 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden"
                     >
                       Bank Details
                     </a>
                     <a
-                      href="#"
+                      href="/#"
                       className="px-12 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden"
                     >
                       Loans
                     </a>
                     <a
-                      href="#"
+                      href="/#"
                       className="px-12 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden"
                     >
                       Savings
                     </a>
                     <a
-                      href="#"
+                      href="/#"
                       className="px-12 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden"
                     >
                       Apps and Systems

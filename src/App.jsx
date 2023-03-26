@@ -5,8 +5,6 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Header from "./components/Dashboard/Header";
 import SideBar from "./components/Dashboard/Sidebar";
 import Stats from "./components/Main/Stats";
-import { Table } from "./components/Main/Table";
-import UserDetails from "./components/Main/UserDetails";
 import UserProfile from "./components/Main/UserProfile";
 import { UsersTable } from "./components/Main/UserTable";
 import SignUp from "./components/SignUp/SignUp";
@@ -19,6 +17,7 @@ function App() {
           <Route path="/" element={<SignUp />} />
 
           <Route
+            exact
             path="/Userprofile/:id"
             element={
               <section className=" bg-gray-50">

@@ -1,7 +1,6 @@
 import {
   Assessment,
   Cached,
-  ChatRounded,
   Compress,
   ControlPoint,
   CorporateFare,
@@ -27,7 +26,10 @@ import {
 import React, { useState } from "react";
 
 function SideBar() {
+  //State to make the Sidebar button slide in and out
   const [open, setOpen] = useState(true);
+
+  //List of Items on the menu bar and there Icons respectively mapped over the sidebar menu
   const menuList = [
     { title: <h6>Switch Organization</h6>, icon: <CorporateFare /> },
 

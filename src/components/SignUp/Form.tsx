@@ -1,11 +1,9 @@
 import React from "react";
 import "./Form.scss";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Form = () => {
-  const navigate = useNavigate;
-
   return (
     <div>
       <form className="login100-form validate-form">

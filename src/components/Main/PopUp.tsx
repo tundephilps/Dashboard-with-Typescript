@@ -2,6 +2,7 @@ import { FilterList, Menu } from "@mui/icons-material";
 import React, { useState } from "react";
 
 const PopUp = () => {
+  //Conditional Rendering Menu List Onclick of an Icon
   const [showOptions, setShowOptions] = useState(false);
   const handleClick = () => {
     setShowOptions(!showOptions);
