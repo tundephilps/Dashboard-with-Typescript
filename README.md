@@ -1,16 +1,16 @@
 A Dashboard that fetches data of diffrent Users from a Mock API with 500 records, local storage is used to store and retrieve user details on the userprofile page.
 
 Technologies used:
-HTML
-SCSS
-Tailwind CSS
-Material UI Icons
-JSX
-Typescript
-React
-React Router Dom v6
-React paginate (For pagination)
-Firebase (For Hosting)
+HTML<br/>
+SCSS<br/>
+Tailwind CSS<br/>
+Material UI Icons<br/>
+JSX<br/>
+Typescript<br/>
+React<br/>
+React Router Dom v6<br/>
+React paginate (For pagination)<br/>
+Firebase (For Hosting)<br/>
 
 You are first Welcomed into the Login page which contains a login button that routes you to the main dashboard (No backend funcionality involved)
 
