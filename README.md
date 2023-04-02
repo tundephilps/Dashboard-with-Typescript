@@ -1,4 +1,7 @@
 A Dashboard that fetches data of diffrent Users from a Mock API with 500 records, local storage is used to store and retrieve user details on the userprofile page.
+<br />
+I was asked to make exact replica of this Figma Design https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/Lendsqr-Frontend-Engineering-Assessment?node-id=5530-2342&t=KRPu3YvdZqKKXrvk-0 <br />
+
 
 Technologies used:
 HTML<br/>
@@ -11,6 +14,7 @@ React<br/>
 React Router Dom v6<br/>
 React paginate (For pagination)<br/>
 Firebase (For Hosting)<br/>
+
 
 You are first Welcomed into the Login page which contains a login button that routes you to the main dashboard (No backend funcionality involved)
 
