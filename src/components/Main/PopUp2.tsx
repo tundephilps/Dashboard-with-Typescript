@@ -5,9 +5,9 @@ import {
   Visibility,
 } from "@mui/icons-material";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const PopUp2 = () => {
+const PopUp2 = ({ user }) => {
   //Conditional Rendering Menu List Onclick of an Icon
   const [showOptions, setShowOptions] = useState(false);
   const handleClick = () => {
@@ -32,17 +32,12 @@ const PopUp2 = () => {
             aria-labelledby="dropdownUsersButton"
           >
             <li>
-              <a
-                //  href={`/Userprofile/${user.id}`}
-                onClick={() => {
-                  navigate("/Userprofile/:id");
-                }}
-                //href="/Userprofile/:id"
-                className="flex gap-2 items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                <Visibility />
-                View Details
-              </a>
+              <Link to={`users/${user.id}`} className="text-decoration-none">
+                <a className="flex gap-2 items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  <Visibility />
+                  View Details
+                </a>
+              </Link>
             </li>
             <li>
               <a

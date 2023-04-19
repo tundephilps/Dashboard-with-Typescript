@@ -1,40 +1,20 @@
 import React from "react";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-//import "./App.scss";
+
 import Header from "./components/Dashboard/Header";
 import SideBar from "./components/Dashboard/Sidebar";
-import Stats from "./components/Main/Stats";
-import UserProfile from "./components/Main/UserProfile";
-import { UsersTable } from "./components/Main/UserTable";
 import SignUp from "./components/SignUp/SignUp";
+import Stats2 from "./components/Main/Stats2";
+import Users from "./components/API/components/Users";
+import UserDetail from "./components/API/components/UserDetail";
 
-function App() {
+function App({ user, users }) {
   return (
     <div>
       <Router>
         <Routes>
           <Route path="/" element={<SignUp />} />
-
-          <Route
-            exact
-            path="/Userprofile/:id"
-            element={
-              <section className=" bg-gray-50">
-                <Header />
-                <div className="flex flex-row">
-                  {/*Header starts*/}
-                  <div>
-                    <SideBar />
-                  </div>
-                  <div className="p-4 items-center justify-center w-[100%]">
-                    {/** <!-- Add content here, remove div below -->*/}
-                    <UserProfile />
-                  </div>
-                </div>
-              </section>
-            }
-          />
 
           <Route
             path="/Dashboard//*"
@@ -46,17 +26,20 @@ function App() {
                   <div>
                     <SideBar />
                   </div>
-                  <div className="p-4 items-center justify-center w-[100%]">
+                  <div className="p-4 items-center justify-center w-[100%] overflow-scroll lg:overflow-visible">
                     {/** <!-- Add content here, remove div below -->*/}
                     <Routes>
                       <Route
                         path="/"
                         element={
                           <div>
-                            <Stats /> <UsersTable />{" "}
+                            <Stats2 />
+                            <Users />
                           </div>
                         }
                       />
+
+                      <Route path="/users/:id" element={<UserDetail />} />
                     </Routes>
                   </div>
                 </div>

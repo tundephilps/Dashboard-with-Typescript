@@ -67,8 +67,8 @@ function SideBar() {
   return (
     <div
       className={`${
-        open ? "w-72" : "w-20"
-      } h-[100%] transition-all duration-500 relative  bg-white font-normal text-blue-900 gap-1`}
+        open ? "w-[283px]" : "w-20"
+      } h-[1695px] transition-all duration-500 relative  bg-white font-normal text-blue-900 gap-1`}
     >
       <ControlPoint
         onClick={() => setOpen(!open)}

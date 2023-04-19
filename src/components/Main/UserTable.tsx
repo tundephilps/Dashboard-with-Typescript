@@ -137,9 +137,7 @@ export const UsersTable = (props: any) => {
                     {getButtonText(user.lastActiveDate)}
                   </button>
                 </td>
-                <td>
-                  <PopUp2 />
-                </td>
+                <td>{/*<PopUp2 />*/} </td>
               </tr>
             ))}
           </tbody>
